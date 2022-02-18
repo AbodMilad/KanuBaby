@@ -1,0 +1,35 @@
+﻿@model HomeViewModel
+
+    <div>
+        <a asp-controller="Home" asp-action="CreateLocation" >
+        Create New Location
+        </a>
+    </div>
+<div>
+    <a asp-controller="Request" asp-action="List">
+        Request
+    </a>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Supplement Name
+            </th>
+            <th>
+                Amount
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplement in Model.Supplements)
+        {
+           
+                @supplement.name
+                @supplement.amount
+            
+        }
+    </tbody>
+</table>

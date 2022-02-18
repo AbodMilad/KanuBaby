@@ -1,0 +1,62 @@
+﻿@model kanusaoft1.Models.Request
+
+<form method="post" asp-action="List">
+    <div asp-validation-summary="All"></div>
+    <label>
+        Location :
+        <select asp-for="Location">
+            <option>Wsta</option>
+            <option>Arbouye</option>
+            <option>4rbye</option>
+            <option>Bsheyrye</option>
+
+        </select>
+    </label>
+    <div>
+        <span asp-validation-for="Location"></span>
+    </div>
+    <div>
+        <label asp-for="SupplementName">
+            Water
+            <input type="checkbox" asp-for="SupplementName" />
+        </label>
+    </div>
+    <div>
+        <span asp-validation-for="SupplementName"></span>
+    </div>
+    <br />
+
+    <label asp-for="name">
+        Gazoline
+        <input type="checkbox" asp-for="SupplementName" />
+    </label>
+    <div>
+        <span asp-validation-for="SupplementName"></span>
+    </div>
+    <br />
+
+    <label asp-for="name">
+        Desiel
+        <input type="checkbox" asp-for="SupplementName" />
+    </label>
+    <div>
+        <span asp-validation-for="SupplementName"></span>
+    </div>
+    <br />
+
+    <label asp-for="amount">
+        Int The Amount You Want It :
+        <input type="text" asp-for="SupplementAmount" />
+    </label>
+    <div>
+        <span asp-validation-for="SupplementName"></span>
+    </div>
+
+
+    <a asp-controller="Tank"
+       asp-action="AddToTank"
+       asp-route-name="@Model.SupplementName">
+        Add To Tank
+    </a>
+
+</form>

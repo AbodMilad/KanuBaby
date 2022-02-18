@@ -1,0 +1,29 @@
+﻿@model kanusaoft1.Models.LocationRepository
+
+    <form method="post" asp-action="DeleteLocation">
+        <div>
+            <div>
+                <h3>Delete Location</h3>
+            </div>
+            <div>
+                <label asp-for="adress"></label>
+            </div>
+            <div>
+                <input asp-for="adrress" disabled />
+            </div>
+            <div>
+                <label asp-fpr="name"></label>
+            </div>
+            <div>
+                <input asp-for="name" disabled />
+            </div>
+            <div>
+                <input type="submit" value="Delete" />
+            </div>
+            <div>
+                <a asp-action="Index">Back</a>
+            </div>
+
+        </div>
+
+    </form>

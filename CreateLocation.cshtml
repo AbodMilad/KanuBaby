@@ -1,0 +1,54 @@
+﻿@model kanusaoft1.Model.location
+
+<h4>Location Management</h4>
+<form method="post" asp-action="CreateLocation">
+    <div>
+        <label asp-for="adress"></label>
+    </div>
+    <div>
+       <input asp-for="adress" />
+    </div>
+    <div>
+        <label asp-for="name"></label>
+    </div>
+    <div>
+        <input asp-for="name"/>
+    </div>
+    <div>
+        <input type="submit" value="CreateLocation"/>
+    </div>
+    <div>
+        <a asp-action="Index">
+            Back Home
+        </a>
+    </div>
+</form> 
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>LocationAdress</th>
+                <th>LocationName</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var location in Model)
+            {
+                <tr>
+                    <td>@location.adrees</td>
+                    <td>@location.name</td>
+                    <td>
+                        <div>
+                            <a asp-controller="Home" asp-route-name="@location.name" asp-action="EditLocation">
+                               Edit
+                            </a>
+                            <a asp-controller="Home" asp-route-name="@location.name" asp-action="Delete">
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
